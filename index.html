@@ -48,6 +48,7 @@ p {
     border-radius: 12px;
     font-size: 20px;
     transition: .3s;
+    cursor: pointer;
 }
 
 .download:hover {
@@ -63,12 +64,23 @@ p {
     <p>Collect Batteries 🔋 and Avoid Gears ⚙️</p>
     <p>Download the latest version for Android.</p>
 
-    <a class="download"
-       href="https://drive.google.com/file/d/1Wwua_aRLE00vhBVHeYIfjH2diLbphQwa/view?usp=sharing"
-       target="_blank">
+    <a class="download" 
+       id="downloadBtn" 
+       href="https://drive.google.com/file/d/1h9f_-0xdyK4l-sOLq5vACBkjWEyoU89M/view?usp=drivesdk" 
+       target="_blank" 
+       rel="noopener noreferrer">
        ⬇ Download APK
     </a>
 </div>
+
+<script>
+document.getElementById('downloadBtn').addEventListener('click', function(e) {
+    var url = this.href;
+    if (/Android/i.test(navigator.userAgent)) {
+        window.open(url, '_system');
+    }
+});
+</script>
+
 </body>
 </html>
-
